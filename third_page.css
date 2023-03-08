@@ -1,0 +1,26 @@
+.team-section{
+    background-color: #2255a4;
+}
+
+.team-section .team-items .item .inner .info{
+    background-color: #2255a4;
+}
+
+.title{
+    text-align: center;
+    text-transform: capitalize;
+    color: #fff;
+    padding-top: 20px;
+    position: relative;
+}
+
+.title:after{
+    content: "";
+    position: absolute;
+    width: 20%;
+    height: 2px;
+    background-image: linear-gradient(to left, transparent 5%, #fff);
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
