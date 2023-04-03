@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://kit.fontawesome.com/38fcdfa8e6.js" crossorigin="anonymous"></script>
+    <title>Crickiting Phantoms</title>
+    <link rel="stylesheet" href="firstpage.css">
+    <link rel="stylesheet" href="Lastpage.css">
+    <link rel="icon"
+        href="https://upload.wikimedia.org/wikipedia/en/thumb/8/8d/Cricket_India_Crest.svg/1200px-Cricket_India_Crest.svg.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body>
+    <div class="top-bar">
+        <span id="dev"><i class="fa-sharp fa-solid fa-layer-group"></i><a href="https://ruban117.github.io/MyPortfolio/"
+                class="link1" target="_blank">Developer</a></span>
+        <h3 class="hone">CRICKETING PHANTOMS CRICKET ASSOCIATION</h1>
+            <ul>
+                <li><a href="https://www.linkedin.com/in/ruban-pathak-3616b6226/" target="_blank"><i class="fa-brands fa-linkedin"></i></a></li>
+                <li><a href="https://github.com/ruban117" target="_blank"><i class="fa-brands fa-github"></i></a></li>
+            </ul>
+    </div>
+    <nav>
+        <div class="logo">
+            <a><img
+                    src="https://upload.wikimedia.org/wikipedia/en/thumb/8/8d/Cricket_India_Crest.svg/1200px-Cricket_India_Crest.svg.png">Cricketing
+                Phantoms</a>
+        </div>
+        <div class="toggle">
+            <a href="#"><i class="fa-solid fa-bars"></i></a>
+        </div>
+        <ul class="menu">
+            <li><a href="index.html" class="link1">Home</a></li>
+            <li><a href="our_members.html" class="link1">Our Members</a></li>
+            <li><a href="Official_Tour_Gallary.html" class="link1">Official Tour Gallery</a></li>
+            <li><a href="winandlooseplayers.html" class="link1">Regular Match Updates</a></li>
+            <li><a href="Contact_Developer.html" class="link1">Contact Developer</a></li>
+        </ul>
+    </nav>
+    <div id="contact">
+        <div class="ct">
+            <h1>Contact Developer</h1>
+            <p>Thank you for visiting our web application if you face any
+                problem or want to contact our developer please fill up this form 
+                <b>(unnassery calls or messages will be avoided)</b>
+            </p>
+        </div>
+        <div class="co">
+            <div class="contactinfo">
+                <div class="box">
+                    <div class="icon"><i class="fa-solid fa-location-pin"></i></div>
+                    <div class="text">
+                        <h3>Address</h3>
+                        <p>28, South Baishnab Para Road <br> Naihati 24 Parganas <br> 743166 </p>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="icon"><i class="fa-solid fa-square-phone"></i></div>
+                    <div class="text">
+                        <h3>Phone</h3>
+                        <p>+91 6289814242</p>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="icon"><i class="fa-solid fa-envelope"></i></div>
+                    <div class="text">
+                        <h3>Email Id</h3>
+                        <p>rubanpathak706@gmail.com</p>
+                    </div>
+                </div>
+                <h2 class="txt icon">Connect With Us</h2>
+                <ul class="sci">
+                    <li><a href="https://www.linkedin.com/in/ruban-pathak-3616b6226/" target="_blank"><i class="fa-brands fa-linkedin"></i></a></li>
+                    <li><a href="https://github.com/ruban117" target="_blank"><i class="fa-brands fa-github"></i></a></li>
+                </ul>
+            </div>
+            <div class="contact-right">
+                <form name="submit-to-google-sheet">
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="Email" placeholder="Your Email" required>
+                    <textarea name="Message" rows="6" placeholder="Your Message" required></textarea>
+                    <button type="submit">Submit</button>
+                </form>
+                <span id="msg"></span>
+            </div>
+        </div>
+    </div>
+    <section class="footer">
+        <div class="si">
+            <a href="https://github.com/ruban117" target="_blank"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/ruban-pathak-3616b6226/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://ruban117.github.io/MyPortfolio/" target="_blank"><i class="fa-solid fa-user"></i></a>
+        </div>
+        <ul class="f-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="our_members.html">Our Members</a></li>
+            <li><a href="Official_Tour_Gallary.html">Official Tour Gallery</a></li>
+            <li><a href="winandlooseplayers.html">Regular Match Updates</a></li>
+            <li><a href="Contact_Developer.html">Contact Developer</a></li>
+        </ul>
+
+        <p class="copyright">Crickiting Phantoms @2023 all rights reserved</p>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(function () {
+            $(".toggle").on("click", function () {
+                if ($(".menu").hasClass("active")) {
+                    $(".menu").removeClass("active");
+                    $(this).find("a").html("<i class='fa-solid fa-bars'></i>");
+                } else {
+                    $(".menu").addClass("active");
+                    $(this).find("a").html("<i class='fa-solid fa-xmark'></i>");
+                }
+            })
+        })
+    </script>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbyYg8efHVZ6HRjVjCUF1gyznnOYKyuZrzn6mmcbR7y4QbFdHV4W6B_AQa0k81G-1XFL2Q/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const msg= document.getElementById("msg")
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+                msg.innerHTML= "Thank you for your feedback"
+                setTimeout(function(){
+                    msg.innerHTML= ""
+                },5000)
+                form.reset()
+            })
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
+</body>
+
+</html>
