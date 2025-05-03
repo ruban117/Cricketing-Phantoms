@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://kit.fontawesome.com/38fcdfa8e6.js" crossorigin="anonymous"></script>
+    <title>Crickiting Phantoms</title>
+    <link rel="stylesheet" href="firstpage.css">
+    <link rel="stylesheet" href="Lastpage.css">
+    <link rel="icon"
+        href="https://upload.wikimedia.org/wikipedia/en/thumb/8/8d/Cricket_India_Crest.svg/1200px-Cricket_India_Crest.svg.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body>
+    <div class="top-bar">
+        <span id="dev"><i class="fa-sharp fa-solid fa-layer-group"></i><a href="https://ruban117.github.io/MyPortfolio/"
+                class="link1" target="_blank">Developer</a></span>
+        <h3 class="hone">CRICKETING PHANTOMS CRICKET ASSOCIATION</h1>
+            <ul>
+                <li><a href="https://www.linkedin.com/in/ruban-pathak-3616b6226/" target="_blank"><i class="fa-brands fa-linkedin"></i></a></li>
+                <li><a href="https://github.com/ruban117" target="_blank"><i class="fa-brands fa-github"></i></a></li>
+            </ul>
+    </div>
+    <nav>
+        <div class="logo">
+            <a><img
+                    src="https://upload.wikimedia.org/wikipedia/en/thumb/8/8d/Cricket_India_Crest.svg/1200px-Cricket_India_Crest.svg.png">Cricketing
+                Phantoms</a>
+        </div>
+        <div class="toggle">
+            <a href="#"><i class="fa-solid fa-bars"></i></a>
+        </div>
+        <ul class="menu">
+            <li><a href="index.html" class="link1">Home</a></li>
+            <li><a href="our_members.html" class="link1">Our Members</a></li>
+            <li><a href="Official_Tour_Gallary.html" class="link1">Official Tour Gallery</a></li>
+            <li><a href="winandlooseplayers.html" class="link1">Regular Match Updates</a></li>
+            <li><a href="nrr.html" class="link1">Calculate Net Run Rate</a></li>
+            <li><a href="Contact_Developer.html" class="link1">Contact Developer</a></li>
+        </ul>
+    </nav>
+    <div id="contact">
+        <div class="ct">
+            <h1>Net Run Rate Calculator</h1>
+            <p>NRR (Total runs scored by team / Total overs played by team)  - (Total runs scored against team / Total overs played against team)<br><br>  
+                <b> note-If a team is all out before their full quota of overs, the calculation is based on the full quota of overs.</b>
+            </p>
+        </div>
+            <div class="contact-right">
+                <form name="submit-to-google-sheet">
+                    <input type="number" name="Total runs scored by team" placeholder="Total runs scored by team" required>
+                    
+                    <input type="number" name="Total overs played by team" step="0.1" placeholder="Total overs played by team" required>
+                    
+                    <input type="number" name="Total runs scored against team" placeholder="Total runs scored against team" required>
+                    
+                    <input type="number" name="Total overs played against team" step="0.1" placeholder="Total overs played against team" required>
+                    
+                    <button type="submit">Submit</button>
+                </form>
+                
+                <span id="msg"></span>
+            </div>
+        </div>
+    </div>
+    <section class="footer">
+        <div class="si">
+            <a href="https://github.com/ruban117" target="_blank"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/ruban-pathak-3616b6226/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://ruban117.github.io/MyPortfolio/" target="_blank"><i class="fa-solid fa-user"></i></a>
+        </div>
+        <ul class="f-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="our_members.html">Our Members</a></li>
+            <li><a href="Official_Tour_Gallary.html">Official Tour Gallery</a></li>
+            <li><a href="winandlooseplayers.html">Regular Match Updates</a></li>
+            <li><a href="Contact_Developer.html">Contact Developer</a></li>
+        </ul>
+
+        <p class="copyright">Crickiting Phantoms @2023 all rights reserved</p>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(function () {
+            $(".toggle").on("click", function () {
+                if ($(".menu").hasClass("active")) {
+                    $(".menu").removeClass("active");
+                    $(this).find("a").html("<i class='fa-solid fa-bars'></i>");
+                } else {
+                    $(".menu").addClass("active");
+                    $(this).find("a").html("<i class='fa-solid fa-xmark'></i>");
+                }
+            })
+        })
+    </script>
+
+
+<script>
+    document.forms["submit-to-google-sheet"].addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const runsScored = parseFloat(this["Total runs scored by team"].value);
+        const oversPlayed = parseFloat(this["Total overs played by team"].value);
+        const runsAgainst = parseFloat(this["Total runs scored against team"].value);
+        const oversAgainst = parseFloat(this["Total overs played against team"].value);
+
+        if (
+            isNaN(runsScored) || isNaN(oversPlayed) ||
+            isNaN(runsAgainst) || isNaN(oversAgainst) ||
+            oversPlayed <= 0 || oversAgainst <= 0
+        ) {
+            document.getElementById("msg").innerText = "❌ Invalid input.";
+            return;
+        }
+
+        const nrr = (runsScored / oversPlayed) - (runsAgainst / oversAgainst);
+        document.getElementById("msg").innerText = "✅ Net Run Rate: " + nrr.toFixed(3);
+    });
+</script>
+
+
+
+    
+</body>
+
+</html>
